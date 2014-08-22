@@ -138,12 +138,12 @@ loginpass = new JPasswordField(10);
 loginpassback = loginpass;
 loginpass.setEchoChar('*');
 			    	c.ipady = 1;       						
-					c.ipadx = 1;       						
+					c.ipadx = 1       						
 		        	//c.weighty = 0.0;   						
 		        	//c.anchor = GridBagConstraints.WEST; 	
 		       		//c.gridwidth = 2;   						
-		        	c.gridx = 1;       						     
-		        	c.gridy = 1;       						
+		        	c.gridx = 1       						     
+		        	c.gridy = 1       						
 		        	gridbag.setConstraints(loginpass, c);
 		        p2.add(loginpass);
 				
@@ -153,7 +153,7 @@ LOGIN = new JButton("LOGIN");
 		        	c.weighty = 0.0;   						
 		        	c.anchor = GridBagConstraints.CENTER; 	        
 					c.gridwidth = 0;   						
-		        	c.gridx =0;       						      
+		        	c.gridx =0       						      
 		        	c.gridy =4;       						
 		        	gridbag.setConstraints(LOGIN, c);
 		        p2.add(LOGIN);										
