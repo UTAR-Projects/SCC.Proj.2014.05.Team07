@@ -225,7 +225,7 @@ LOGIN = new JButton("LOGIN");
 			  }
 			  catch(Exception ex)
 			  {
-
+                             JOptionPane.showMessageDialog(frame, "Please key in appropriate value!!!");
 			  }
 		}	
 		void displayResults(ResultSet r) throws SQLException 
