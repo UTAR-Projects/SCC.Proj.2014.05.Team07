@@ -1,0 +1,22 @@
+Hi Friends,
+          This is one simple functionality Library management system.
+To compile this application to just type javac MyLibrarian.java
+and to run java MyLibrarian
+          Please do not forget to set the class path accordingly.
+This application is very much a primary state one and can be brought up with numerous advancing in technical and functional terms as well.Also e coding style is procedural one though Java is used.
+          MSAccess has been used at backend.So requires the DB file Bank.mdb attached along.I hope this benefit some of you.I request you to share your ideas on this.
+
+Login Details:
+
+User Login:
+Login ID:a
+Password:a
+
+Admin Login:
+Login ID:hbk
+Password:cena
+
+Regards
+Yogesh
+
+To accessdatabase... change the URL as in fb chat lol
