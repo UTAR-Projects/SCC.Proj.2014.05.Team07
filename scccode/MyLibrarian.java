@@ -225,7 +225,7 @@ LOGIN = new JButton("LOGIN");
 			  }
 			  catch(Exception ex)
 			  {
-                             JOptionPane.showMessageDialog(frame, "Please key in appropriate value!!!");
+                             JOptionPane.showMessageDialog(frame, "Your account are not inside our database!!!\nPLease call our administrator for further action");
 			  }
 		}	
 		void displayResults(ResultSet r) throws SQLException 
