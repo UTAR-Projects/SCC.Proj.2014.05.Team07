@@ -111,7 +111,7 @@ void login()
 
 	loginname = new JPasswordField(10);
     loginname.setEchoChar('*');
-	
+
      		    	c.ipady = 1;       						
 					c.ipadx = 1;       						
 		        	//c.weighty = 0.0;   						
