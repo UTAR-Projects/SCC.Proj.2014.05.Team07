@@ -96,7 +96,7 @@ void login()
 
 	 p2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),"Login Panel"));
      
-	 jLabel1 = new JLabel("Enter Username 112345: ");	
+	 jLabel1 = new JLabel("Enter Username : ");	
 	 jLabel1.setFont(dataFont);
 	                //c.weighty = 0.0;   	  //Vertical Space	
 					c.ipady = 1;       	  //Height of Component				
