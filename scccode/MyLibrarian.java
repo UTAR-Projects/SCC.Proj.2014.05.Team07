@@ -67,7 +67,7 @@ JTable jtable = new JTable(defaulttablemodel);
 String tempname = "";
 int tempcnt;
 
-//Following is required to generate proper message
+//Following is required to generate proper messages
 String msgsel1="Are You Sure?";
 String msgesel2;
 int n;
