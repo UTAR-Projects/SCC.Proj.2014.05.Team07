@@ -67,7 +67,7 @@ JTable jtable = new JTable(defaulttablemodel);
 String tempname = "";
 int tempcnt;
 
-//Following is required to generate proper messages
+//Following is required to generate proper message
 String msgsel1="Are You Sure?";
 String msgesel2;
 int n;
@@ -96,7 +96,7 @@ void login()
 
 	 p2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),"Login Panel"));
      
-	 jLabel1 = new JLabel("Enter Username 1111112345: ");	
+	 jLabel1 = new JLabel("Enter Username : ");	
 	 jLabel1.setFont(dataFont);
 	                //c.weighty = 0.0;   	  //Vertical Space	
 					c.ipady = 1;       	  //Height of Component				
@@ -111,7 +111,7 @@ void login()
 
 	loginname = new JPasswordField(10);
     loginname.setEchoChar('*');
-
+	
      		    	c.ipady = 1;       						
 					c.ipadx = 1;       						
 		        	//c.weighty = 0.0;   						
@@ -172,109 +172,29 @@ LOGIN = new JButton("LOGIN");
 			{
    				String s=ev.getActionCommand(); 	
 				//see which button is click accordingly call its method			
-				if(s=="LOGIN") 
-				{
-					// call method getaccess();
-					getaccess();	
-				}  
-
-				else if(s=="ADD NEW BOOK")
-				{
-					addnewbook();
-				}	
-				
-				else if(s=="ADD THIS BOOK")
-				{
-					AddFlag=true;
-					LIBCONFIRM();
-				}	
-
-				else if(s=="DELETE EXISTING BOOK")
-				{
-					deloldbook();
-				}
-
-				else if(s=="DELETE THIS BOOK")
-				{
-					DelFlag=true;
-					LIBCONFIRM();
-				}
-
-				else if(s=="ADD NEW USER")
-				{
-					addnewuser();
-				}
-
-				else if (s=="ADD THIS USER")
-				{
-				   AddUsrFlag=true;
-				   USRCONFIRM();						
-				}
-
-				else if(s=="DELETE EXISTING USER")
-				{
-					delexistuser();
-				}
-
-				else if(s=="DELETE THIS USER")
-				{
-					DelUsrFlag=true;
-					USRCONFIRM();
-				}
-
-				else if(s=="CHANGE PASSWORD")
-
-				{
-					CHPW();
-				}
-
-				else if(s=="CHANGE MY PASSWORD")
-				{
-					PWCHG();
-				}
-
-
-				else if(s=="RUN QUERY")
-				{
-					QueryBuilder();
-				}
-
-				else if(s=="RUN THIS QUERY")
-				{
-					handleQuery();
-				}
-
-				else if(s=="REPORTS")
-				{
-					BookReports();
-				}
-
-				else if(s=="ADD NEW BORROWER")
-				{
-					addnewborrower();
-				}
-
-				else if(s=="ADD THIS BORROWER")
-				{
-					BORROWER_ADD();
-				}
-
-				else if (s=="ISSUE BOOK")
-				{
-					ISSUE_BOOK();
-				}
-
-				else if (s=="VIEW")
-				{
-					ExtractBookRecord();
-				}
-
-				else if (s=="MODIFY")
-				{
-					UpdateBorrowerRecord();
-				}
-
-			}
+				switch(s)
+   				{
+   				case "LOGIN": getaccess(); break; // call method getaccess();
+   				case "ADD NEW BOOK": addnewbook(); break;
+   				case "ADD THIS BOOK": AddFlag=true; LIBCONFIRM(); break;
+   				case "DELETE EXISTING BOOK": deloldbook();break;
+   				case "DELETE THIS BOOK": DelFlag=true; LIBCONFIRM();break;
+   				case "ADD NEW USER": addnewuser();break;
+				case "ADD THIS USER": AddUsrFlag=true; USRCONFIRM()	;break;
+				case "DELETE EXISTING USER": delexistuser();break;
+				case "DELETE THIS USER": DelUsrFlag=true; USRCONFIRM();break;
+				case "CHANGE PASSWORD": CHPW();break;
+				case "CHANGE MY PASSWORD":PWCHG();break;
+				case "RUN QUERY": QueryBuilder();break;
+				case "RUN THIS QUERY": handleQuery();break;
+				case "REPORTS": BookReports();break;
+				case "ADD NEW BORROWER": addnewborrower();break;
+				case "ADD THIS BORROWER": BORROWER_ADD();break;
+		    	        case "ISSUE BOOK": ISSUE_BOOK();break;
+				case "VIEW": ExtractBookRecord();break;
+			        case "MODIFY": UpdateBorrowerRecord(); break;
+   				}
+                        }
 		}
 
     void getaccess()
@@ -305,7 +225,7 @@ LOGIN = new JButton("LOGIN");
 			  }
 			  catch(Exception ex)
 			  {
-
+                             JOptionPane.showMessageDialog(frame, "Your account are not inside our database!!!\nPLease call our administrator for further action");
 			  }
 		}	
 		void displayResults(ResultSet r) throws SQLException 
