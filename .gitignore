@@ -230,3 +230,5 @@ hs_err_pid*
 
 .metadata/
 scccode/.metadata/.plugins/org.eclipse.cdt.core/.log
+scccode/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+scccode/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
