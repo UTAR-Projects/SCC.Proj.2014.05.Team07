@@ -1,10 +1,13 @@
-import javax.swing.*
+import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.table.*;
+
 import java.sql.*;
 import java.util.*;
-
+import java.sql.Connection;
 
 public class MyLibrarian
 {
@@ -27,7 +30,7 @@ GridBagLayout gridbag = new GridBagLayout();
 GridBagConstraints c = new GridBagConstraints();
 String t1;
 //String url="jdbc:odbc:BANK";
-String url="jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ= C:/BANK.mdb";
+String url="jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ= C:/Users/Jacky/Documents/SCC.Proj.2014.05.Team07/scccode/BANK.mdb";
 String driver="sun.jdbc.odbc.JdbcOdbcDriver";
 String sql,sq,sqUsr,sbookd,sdUsr,squpdate,dialogmessage,serialno,squpdate_book,squpdate_mag;
 int dialogtype = JOptionPane.PLAIN_MESSAGE;
@@ -67,11 +70,13 @@ JTable jtable = new JTable(defaulttablemodel);
 String tempname = "";
 int tempcnt;
 
-//Following is required to generate proper messages
+//Following is required to generate proper message
 String msgsel1="Are You Sure?";
 String msgesel2;
 int n;
 JFrame frame;
+
+
 
 public static void main(String[] args) 
 	{
@@ -81,8 +86,20 @@ public static void main(String[] args)
 public MyLibrarian()
 	{
 		//setupMenuBar();
-		login();
+		//login();
+	String name =JOptionPane.showInputDialog("What school are you studying?");
+	schoolName();
+	if (name.toUpperCase() == schoolName() || name.toUpperCase() == "UNIVERSITY TUNKI ABDUL RAHMAN" || name.toUpperCase() == "UNIVERSITI TUNKI ABDUL RAHMAN")
+		showMainprograms();
+	else
+		JOptionPane.showMessageDialog(frame, "Sorry you are not authorize to access the libarary system in this university!!!");
 	}
+public String schoolName()
+{
+	String school = "UTAR";
+	
+	return school;
+}
 
 void login()
 	{
@@ -111,7 +128,7 @@ void login()
 
 	loginname = new JPasswordField(10);
     loginname.setEchoChar('*');
-
+	
      		    	c.ipady = 1;       						
 					c.ipadx = 1;       						
 		        	//c.weighty = 0.0;   						
@@ -277,7 +294,7 @@ LOGIN = new JButton("LOGIN");
 			}
 		}
 
-    void getaccess()
+    void getaccess() 
 	{
 
 		  try
@@ -1994,7 +2011,9 @@ void accessDBquery(String sqlq)
   			try
 			{
    				Class.forName(driver);
+   				System.out.println("driver load");
 	   			Connection connection=DriverManager.getConnection(url);
+   				System.out.println("database connect");
 	   			Statement statement = connection.createStatement();
 	   			boolean hasResults = statement.execute(sqlq);
 	   			if(hasResults)
@@ -2690,7 +2709,6 @@ void getDate()
 		//System.out.println("Now : "+sdf.format(cal.getTime()));
 		String t1 = sdf.format(cal.getTime());
 		}
-
 
 }
 
