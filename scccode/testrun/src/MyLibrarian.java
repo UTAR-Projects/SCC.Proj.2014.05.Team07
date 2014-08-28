@@ -1,12 +1,13 @@
-
-
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.table.*;
+
 import java.sql.*;
 import java.util.*;
-
+import java.sql.Connection;
 
 public class MyLibrarian
 {
@@ -29,7 +30,7 @@ GridBagLayout gridbag = new GridBagLayout();
 GridBagConstraints c = new GridBagConstraints();
 String t1;
 //String url="jdbc:odbc:BANK";
-String url="jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ= C:/BANK.mdb";
+String url="jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ= C:/Users/Jacky/Documents/SCC.Proj.2014.05.Team07/scccode/BANK.mdb";
 String driver="sun.jdbc.odbc.JdbcOdbcDriver";
 String sql,sq,sqUsr,sbookd,sdUsr,squpdate,dialogmessage,serialno,squpdate_book,squpdate_mag;
 int dialogtype = JOptionPane.PLAIN_MESSAGE;
@@ -75,6 +76,8 @@ String msgesel2;
 int n;
 JFrame frame;
 
+
+
 public static void main(String[] args) 
 	{
 		MyLibrarian c1=new MyLibrarian();
@@ -83,8 +86,21 @@ public static void main(String[] args)
 public MyLibrarian()
 	{
 		//setupMenuBar();
-		login();
+		//login();
+	String name =JOptionPane.showInputDialog("What school are you studying?");
+	schoolName();
+	if (name.toUpperCase().equals(schoolName()) || name.toUpperCase().equals("UNIVERSITY TUNKI ABDUL RAHMAN")  || name.toUpperCase().equals("UNIVERSITI TUNKI ABDUL RAHMAN")
+			|| name.toUpperCase().equals("utar"))
+		showMainprograms();
+	else
+		JOptionPane.showMessageDialog(frame, "Sorry you are not authorize to access the libarary system in this university!!!");
 	}
+public String schoolName()
+{
+	String school = "UTAR";
+	
+	return school;
+}
 
 void login()
 	{
@@ -98,7 +114,7 @@ void login()
 
 	 p2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),"Login Panel"));
      
-	 jLabel1 = new JLabel("Enter Username : ");	
+	 jLabel1 = new JLabel("Enter Username 1111112345: ");	
 	 jLabel1.setFont(dataFont);
 	                //c.weighty = 0.0;   	  //Vertical Space	
 					c.ipady = 1;       	  //Height of Component				
@@ -174,32 +190,112 @@ LOGIN = new JButton("LOGIN");
 			{
    				String s=ev.getActionCommand(); 	
 				//see which button is click accordingly call its method			
-				switch(s)
-   				{
-   				case "LOGIN": getaccess(); break; // call method getaccess();
-   				case "ADD NEW BOOK": addnewbook(); break;
-   				case "ADD THIS BOOK": AddFlag=true; LIBCONFIRM(); break;
-   				case "DELETE EXISTING BOOK": deloldbook();break;
-   				case "DELETE THIS BOOK": DelFlag=true; LIBCONFIRM();break;
-   				case "ADD NEW USER": addnewuser();break;
-				case "ADD THIS USER": AddUsrFlag=true; USRCONFIRM()	;break;
-				case "DELETE EXISTING USER": delexistuser();break;
-				case "DELETE THIS USER": DelUsrFlag=true; USRCONFIRM();break;
-				case "CHANGE PASSWORD": CHPW();break;
-				case "CHANGE MY PASSWORD":PWCHG();break;
-				case "RUN QUERY": QueryBuilder();break;
-				case "RUN THIS QUERY": handleQuery();break;
-				case "REPORTS": BookReports();break;
-				case "ADD NEW BORROWER": addnewborrower();break;
-				case "ADD THIS BORROWER": BORROWER_ADD();break;
-		    	        case "ISSUE BOOK": ISSUE_BOOK();break;
-				case "VIEW": ExtractBookRecord();break;
-			        case "MODIFY": UpdateBorrowerRecord(); break;
-   				}
-                        }
+				if(s=="LOGIN") 
+				{
+					// call method getaccess();
+					getaccess();	
+				}  
+
+				else if(s=="ADD NEW BOOK")
+				{
+					addnewbook();
+				}	
+				
+				else if(s=="ADD THIS BOOK")
+				{
+					AddFlag=true;
+					LIBCONFIRM();
+				}	
+
+				else if(s=="DELETE EXISTING BOOK")
+				{
+					deloldbook();
+				}
+
+				else if(s=="DELETE THIS BOOK")
+				{
+					DelFlag=true;
+					LIBCONFIRM();
+				}
+
+				else if(s=="ADD NEW USER")
+				{
+					addnewuser();
+				}
+
+				else if (s=="ADD THIS USER")
+				{
+				   AddUsrFlag=true;
+				   USRCONFIRM();						
+				}
+
+				else if(s=="DELETE EXISTING USER")
+				{
+					delexistuser();
+				}
+
+				else if(s=="DELETE THIS USER")
+				{
+					DelUsrFlag=true;
+					USRCONFIRM();
+				}
+
+				else if(s=="CHANGE PASSWORD")
+
+				{
+					CHPW();
+				}
+
+				else if(s=="CHANGE MY PASSWORD")
+				{
+					PWCHG();
+				}
+
+
+				else if(s=="RUN QUERY")
+				{
+					QueryBuilder();
+				}
+
+				else if(s=="RUN THIS QUERY")
+				{
+					handleQuery();
+				}
+
+				else if(s=="REPORTS")
+				{
+					BookReports();
+				}
+
+				else if(s=="ADD NEW BORROWER")
+				{
+					addnewborrower();
+				}
+
+				else if(s=="ADD THIS BORROWER")
+				{
+					BORROWER_ADD();
+				}
+
+				else if (s=="ISSUE BOOK")
+				{
+					ISSUE_BOOK();
+				}
+
+				else if (s=="VIEW")
+				{
+					ExtractBookRecord();
+				}
+
+				else if (s=="MODIFY")
+				{
+					UpdateBorrowerRecord();
+				}
+
+			}
 		}
 
-    void getaccess()
+    void getaccess() 
 	{
 
 		  try
@@ -227,7 +323,7 @@ LOGIN = new JButton("LOGIN");
 			  }
 			  catch(Exception ex)
 			  {
-                             JOptionPane.showMessageDialog(frame, "Your account are not inside our database!!!\nPLease call our administrator for further action");
+
 			  }
 		}	
 		void displayResults(ResultSet r) throws SQLException 
@@ -1916,7 +2012,9 @@ void accessDBquery(String sqlq)
   			try
 			{
    				Class.forName(driver);
+   				System.out.println("driver load");
 	   			Connection connection=DriverManager.getConnection(url);
+   				System.out.println("database connect");
 	   			Statement statement = connection.createStatement();
 	   			boolean hasResults = statement.execute(sqlq);
 	   			if(hasResults)
@@ -2612,7 +2710,6 @@ void getDate()
 		//System.out.println("Now : "+sdf.format(cal.getTime()));
 		String t1 = sdf.format(cal.getTime());
 		}
-
 
 }
 
