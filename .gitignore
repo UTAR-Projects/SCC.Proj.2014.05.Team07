@@ -229,3 +229,4 @@ pip-log.txt
 hs_err_pid*
 
 .metadata/
+scccode/.metadata/.plugins/org.eclipse.cdt.core/.log
