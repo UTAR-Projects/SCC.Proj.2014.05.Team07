@@ -96,7 +96,7 @@ public MyLibrarian()
 	}
 public String schoolName()
 {
-	String school = "UTAR";
+	String school = "UTAR1";
 	
 	return school;
 }
