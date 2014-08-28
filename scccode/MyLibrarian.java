@@ -89,7 +89,8 @@ public MyLibrarian()
 		//login();
 	String name =JOptionPane.showInputDialog("What school are you studying?");
 	schoolName();
-	if (name.toUpperCase() == schoolName() || name.toUpperCase() == "UNIVERSITY TUNKI ABDUL RAHMAN" || name.toUpperCase() == "UNIVERSITI TUNKI ABDUL RAHMAN")
+	if (name.toUpperCase().equals(schoolName()) || name.toUpperCase().equals("UNIVERSITY TUNKI ABDUL RAHMAN")  || name.toUpperCase().equals("UNIVERSITI TUNKI ABDUL RAHMAN")
+			|| name.toUpperCase().equals("utar"))
 		showMainprograms();
 	else
 		JOptionPane.showMessageDialog(frame, "Sorry you are not authorize to access the libarary system in this university!!!");
