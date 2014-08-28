@@ -27,7 +27,7 @@ GridBagLayout gridbag = new GridBagLayout();
 GridBagConstraints c = new GridBagConstraints();
 String t1;
 //String url="jdbc:odbc:BANK";
-String url="jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ= C:/BANK.mdb";
+String url="jdbc:odbc:driver={Microsoft Access Driver (*.mdb)};DBQ= C:/123/BANK.mdb";
 String driver="sun.jdbc.odbc.JdbcOdbcDriver";
 String sql,sq,sqUsr,sbookd,sdUsr,squpdate,dialogmessage,serialno,squpdate_book,squpdate_mag;
 int dialogtype = JOptionPane.PLAIN_MESSAGE;
