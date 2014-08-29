@@ -1,0 +1,31 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import java.sql.SQLException ;
+
+
+public class MyLibrarianTest {
+
+//	@Test
+//	public void test() {
+//MyLibrarian myLibrarian = new MyLibrarian();
+//		fail("Not yet implemented");
+//		
+//	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testForExceptions1() {
+	  MyLibrarian myLibrarian = new MyLibrarian();
+
+	   myLibrarian.getaccess();
+	   
+	}
+	
+//	@Test(expected = SQLException.class)
+//	public void testForSQL(){
+//		MyLibrarian myLibrarian = new MyLibrarian();
+//		
+//		myLibrarian.SQLException();
+//		
+//	}
+}

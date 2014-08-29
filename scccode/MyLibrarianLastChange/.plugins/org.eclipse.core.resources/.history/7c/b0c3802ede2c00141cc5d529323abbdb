@@ -1,0 +1,44 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import java.sql.SQLException ;
+import org.junit.rules.ExpectedException;
+import java.sql.Connection;
+
+public class MyLibrarianTest {
+	@Test
+	public void testMyMethod_True(){
+		MyLibrarian myLibrarian = new MyLibrarian();
+		super.testMyMethod_True(myLibrarian);
+	}
+
+//	@Test
+//	public void test() {
+//MyLibrarian myLibrarian = new MyLibrarian();
+//		fail("Not yet implemented");
+//		
+//	}
+	
+//	@Test(expected = IllegalArgumentException.class)
+//	public void testForExceptions1() {
+//	  MyLibrarian myLibrarian = new MyLibrarian();
+//
+//	   myLibrarian.getaccess();
+//	   my
+//	   
+//	   
+//	}
+	
+//	@Test(expected = SQLException.class)
+//	public void testForSQL(){
+//		MyLibrarian myLibrarian = new MyLibrarian();
+//		 myLibrarian = connection.
+//		        Statement statement = connection.createStatement();
+//		        // no entry in ITEMS table
+//		        // statement.executeUpdate("INSERT INTO ITEMS VALUES(111)");
+//		        statement.executeUpdate("INSERT INTO ITEM_COUNT_BIGINT (SELECT DISTINCT IFNULL(COUNT(*), 0) FROM ITEMS ITEMS_0)");
+//		        statement.executeUpdate("INSERT INTO ITEM_COUNT_DOUBLE (SELECT DISTINCT intToDouble_1.c1 FROM ITEM_COUNT_BIGINT ITEM_COUNT_BIGINT_0 JOIN table(intToDouble ( ITEM_COUNT_BIGINT_0.c0 , null )) AS intToDouble_1 ON ( true ))");
+//		    }
+		
+//	}
+}
